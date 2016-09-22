@@ -44,8 +44,19 @@ int main()
         vTherm = ADC_SAR_Seq_1_GetResult16(CH_THERMISTOR);
         vRef   = ADC_SAR_Seq_1_GetResult16(CH_VREF);
         
-        rTherm = Thermistor_1_GetResistance(vRef, vTherm);
-        temperautre = Thermistor_1_GetTemperature(rTherm);
+        rTherm = Thermistor_mid_GetResistance(vRef, vTherm);
+        if (rTherm > 272800) {
+            // -50℃～0℃のThermistorCalcで計算
+            rTherm = Thermistor_low_GetResistance(vRef, vTherm);
+            temperautre = Thermistor_low_GetTemperature(rTherm);
+        } else if (rTherm < 4160) {
+            // 50℃～110℃のThermistorCalcで計算
+            rTherm = Thermistor_high_GetResistance(vRef, vTherm);
+            temperautre = Thermistor_high_GetTemperature(rTherm);
+        } else {
+            // 0℃～50℃のThermistorCalcで計算
+            temperautre = Thermistor_mid_GetTemperature(rTherm);
+        }
         
         sprintf(uartLine, "%d.%d,\t%d.%d,\t%lu,\t%d,\t%d,\t%d\r\n",
             count / 10,

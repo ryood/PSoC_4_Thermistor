@@ -1,47 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="Pin_FollwerIn" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Pin_FollwerOut" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Thermistor_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="Opamp_1" BASE="0x0" SIZE="0x0" desc="OpAmp" visible="true" hidden="false">
-    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_analog_virtualmux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <block name="cy_psoc4_abuf" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-    <register name="CTBM_CTRL" address="0x40100000" bitWidth="32" desc="Global CTB IP and power control" hidden="false">
-      <field name="DEEPSLEEP_ON" from="30" to="30" access="RW" resetVal="" desc="Selects component behavior in DeepSleep power mode">
-        <value name="DISABLE" value="0" desc="CTB IP disabled off during DeepSleep power mode" />
-        <value name="ENABLE" value="1" desc="CTB IP remains enabled during DeepSleep power mode (if ENABLED=1)" />
-      </field>
-      <field name="ENABLED" from="31" to="31" access="RW" resetVal="" desc="Selects component behavior in DeepSleep power mode">
-        <value name="DISABLE" value="0" desc="CTB IP disabled (put analog in power down, open all switches)" />
-        <value name="ENABLE" value="1" desc="CTB IP enabledCTB IP enabled" />
-      </field>
-    </register>
-    <register name="OA_RES_CTRL" address="0x40100004" bitWidth="32" desc="Opamp and resistor control" hidden="false">
-      <field name="OA_PWR_MODE" from="1" to="0" access="RW" resetVal="" desc="Selects power for opamp">
-        <value name="OFF" value="00" desc="Off" />
-        <value name="LOW" value="01" desc="Low power" />
-        <value name="MED" value="10" desc="Medium power" />
-        <value name="HIGH" value="11" desc="High power" />
-      </field>
-      <field name="OA0_DRIVE_STR_SEL" from="2" to="2" access="RW" resetVal="" desc="Opamp output strenght select">
-        <value name="1x" value="0" desc="Internal only" />
-        <value name="10x" value="1" desc="Output to pin" />
-      </field>
-      <field name="OA_PUMP_EN" from="11" to="11" access="RW" resetVal="" desc="Selects pump">
-        <value name="DISABLE" value="0" desc="Pump disabled" />
-        <value name="ENABLE" value="1" desc="Pump enabled" />
-      </field>
-    </register>
-    <register name="OA_COMP_TRIM" address="0x40100F08" bitWidth="32" desc="Opamp Compenation Capacitor Trim" hidden="false">
-      <field name="OA_COMP_TRIM" from="1" to="0" access="RW" resetVal="" desc="Opamp Compenation Capacitor Trim">
-        <value name="HIGH_SPEED" value="01" desc="High Speed" />
-        <value name="BALANCED" value="10" desc="Balanced" />
-        <value name="HIGH_STABILITY" value="11" desc="High Stability" />
-      </field>
-    </register>
-  </block>
   <block name="UART_1" BASE="0x0" SIZE="0x0" desc="Serial Communication Block" visible="true" hidden="false">
     <block name="clock_VM" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="sclk_s_VM" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -381,13 +339,57 @@
       <field name="BREAK_DETECT" from="11" to="11" access="RW" resetVal="" desc="Logical and of corresponding request and mask bits" />
     </register>
   </block>
+  <block name="V_low" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Pin_FollwerOut" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Opamp_1" BASE="0x0" SIZE="0x0" desc="OpAmp" visible="true" hidden="false">
+    <block name="cy_analog_noconnect_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_analog_virtualmux_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <block name="cy_psoc4_abuf" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+    <register name="CTBM_CTRL" address="0x40100000" bitWidth="32" desc="Global CTB IP and power control" hidden="false">
+      <field name="DEEPSLEEP_ON" from="30" to="30" access="RW" resetVal="" desc="Selects component behavior in DeepSleep power mode">
+        <value name="DISABLE" value="0" desc="CTB IP disabled off during DeepSleep power mode" />
+        <value name="ENABLE" value="1" desc="CTB IP remains enabled during DeepSleep power mode (if ENABLED=1)" />
+      </field>
+      <field name="ENABLED" from="31" to="31" access="RW" resetVal="" desc="Selects component behavior in DeepSleep power mode">
+        <value name="DISABLE" value="0" desc="CTB IP disabled (put analog in power down, open all switches)" />
+        <value name="ENABLE" value="1" desc="CTB IP enabledCTB IP enabled" />
+      </field>
+    </register>
+    <register name="OA_RES_CTRL" address="0x40100004" bitWidth="32" desc="Opamp and resistor control" hidden="false">
+      <field name="OA_PWR_MODE" from="1" to="0" access="RW" resetVal="" desc="Selects power for opamp">
+        <value name="OFF" value="00" desc="Off" />
+        <value name="LOW" value="01" desc="Low power" />
+        <value name="MED" value="10" desc="Medium power" />
+        <value name="HIGH" value="11" desc="High power" />
+      </field>
+      <field name="OA0_DRIVE_STR_SEL" from="2" to="2" access="RW" resetVal="" desc="Opamp output strenght select">
+        <value name="1x" value="0" desc="Internal only" />
+        <value name="10x" value="1" desc="Output to pin" />
+      </field>
+      <field name="OA_PUMP_EN" from="11" to="11" access="RW" resetVal="" desc="Selects pump">
+        <value name="DISABLE" value="0" desc="Pump disabled" />
+        <value name="ENABLE" value="1" desc="Pump enabled" />
+      </field>
+    </register>
+    <register name="OA_COMP_TRIM" address="0x40100F08" bitWidth="32" desc="Opamp Compenation Capacitor Trim" hidden="false">
+      <field name="OA_COMP_TRIM" from="1" to="0" access="RW" resetVal="" desc="Opamp Compenation Capacitor Trim">
+        <value name="HIGH_SPEED" value="01" desc="High Speed" />
+        <value name="BALANCED" value="10" desc="Balanced" />
+        <value name="HIGH_STABILITY" value="11" desc="High Stability" />
+      </field>
+    </register>
+  </block>
+  <block name="Pin_FollwerIn" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="cy_boot" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="cy_lfclk" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="V_low" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Thermistor_high" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="V_therm2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="GND_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="R_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Thermistor_mid" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="Thermistor_low" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="V_hi" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="GND_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="R_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="ADC_SAR_Seq_1" BASE="0x0" SIZE="0x0" desc="Sequencing SAR ADC" visible="true" hidden="false">
     <block name="cy_analog_noconnect_31" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
     <block name="cy_analog_noconnect_32" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
@@ -795,9 +797,9 @@
     </register>
   </block>
   <block name="R_ref" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="GND_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
-  <block name="R_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="PWR_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="GND_2" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
+  <block name="R_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="V_therm" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
   <block name="D_1" BASE="0x0" SIZE="0x0" desc="" visible="true" hidden="false" />
 </blockRegMap>

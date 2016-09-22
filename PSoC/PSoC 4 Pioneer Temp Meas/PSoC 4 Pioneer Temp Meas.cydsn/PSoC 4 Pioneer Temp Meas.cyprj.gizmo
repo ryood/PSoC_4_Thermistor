@@ -23,7 +23,9 @@
 <dep name=".\Generated_Source\PSoC4\Pin_FollwerIn_aliases.h" />
 <dep name=".\Generated_Source\PSoC4\Pin_FollwerOut.h" />
 <dep name=".\Generated_Source\PSoC4\Pin_FollwerOut_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\Thermistor_1.h" />
+<dep name=".\Generated_Source\PSoC4\Thermistor_high.h" />
+<dep name=".\Generated_Source\PSoC4\Thermistor_low.h" />
+<dep name=".\Generated_Source\PSoC4\Thermistor_mid.h" />
 <dep name=".\Generated_Source\PSoC4\UART_1.h" />
 <dep name=".\Generated_Source\PSoC4\UART_1_BOOT.h" />
 <dep name=".\Generated_Source\PSoC4\UART_1_PINS.h" />
@@ -70,7 +72,9 @@
 <file name=".\Generated_Source\PSoC4\Pin_FollwerIn_aliases.h" />
 <file name=".\Generated_Source\PSoC4\Pin_FollwerOut.h" />
 <file name=".\Generated_Source\PSoC4\Pin_FollwerOut_aliases.h" />
-<file name=".\Generated_Source\PSoC4\Thermistor_1.h" />
+<file name=".\Generated_Source\PSoC4\Thermistor_high.h" />
+<file name=".\Generated_Source\PSoC4\Thermistor_low.h" />
+<file name=".\Generated_Source\PSoC4\Thermistor_mid.h" />
 <file name=".\Generated_Source\PSoC4\UART_1.h" />
 <file name=".\Generated_Source\PSoC4\UART_1_BOOT.h" />
 <file name=".\Generated_Source\PSoC4\UART_1_PINS.h" />
@@ -105,6 +109,37 @@
 <file name=".\Generated_Source\PSoC4\cytypes.h" />
 <file name=".\Generated_Source\PSoC4\project.h" />
 <file name=".\main.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Thermistor_high.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\Thermistor_high.c" />
+<dep name=".\Generated_Source\PSoC4\Thermistor_high.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Thermistor_high.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Thermistor_low.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\Thermistor_low.c" />
+<dep name=".\Generated_Source\PSoC4\Thermistor_low.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Thermistor_low.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Thermistor_mid.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\Thermistor_mid.c" />
+<dep name=".\Generated_Source\PSoC4\Thermistor_mid.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Thermistor_mid.c" />
+<file name=".\Generated_Source\PSoC4\Thermistor_1.h" />
 <file name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1.o">
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.c" />
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
@@ -665,7 +700,6 @@
 <dep name=".\CortexM0\ARM_GCC_493\Debug\cyPm.o" />
 <dep name=".\CortexM0\ARM_GCC_493\Debug\cyutils.o" />
 <dep name=".\CortexM0\ARM_GCC_493\Debug\CyLFClk.o" />
-<dep name=".\CortexM0\ARM_GCC_493\Debug\Thermistor_1.o" />
 <dep name=".\CortexM0\ARM_GCC_493\Debug\Opamp_1.o" />
 <dep name=".\CortexM0\ARM_GCC_493\Debug\Opamp_1_PM.o" />
 <dep name=".\CortexM0\ARM_GCC_493\Debug\Pin_FollwerIn.o" />
@@ -692,6 +726,9 @@
 <dep name=".\CortexM0\ARM_GCC_493\Debug\V_low_PM.o" />
 <dep name=".\CortexM0\ARM_GCC_493\Debug\V_therm2.o" />
 <dep name=".\CortexM0\ARM_GCC_493\Debug\V_therm2_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Thermistor_low.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Thermistor_mid.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Thermistor_high.o" />
 <dep name=".\CortexM0\ARM_GCC_493\Debug\PSoC 4 Pioneer Temp Meas.a" />
 <dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_493\Debug\CyComponentLibrary.a" />
 </file>
@@ -754,9 +791,13 @@
 <name_val_pair name=".\Generated_Source\PSoC4\V_low_PM.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC4\V_therm2.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
 <name_val_pair name=".\Generated_Source\PSoC4\V_therm2_PM.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name=".\Generated_Source\PSoC4\Thermistor_low.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name=".\Generated_Source\PSoC4\Thermistor_mid.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name=".\Generated_Source\PSoC4\Thermistor_high.c" v="-mcpu=cortex-m0 -mthumb -Wno-main -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="D:\Users\gizmo\Documents\Develop\PSoC 4 Thermistor\PSoC\PSoC 4 Pioneer Temp Meas\PSoC 4 Pioneer Temp Meas.cydsn\CortexM0\ARM_GCC_493\Debug\PSoC 4 Pioneer Temp Meas.hex" v="-mcpu=cortex-m0 -mthumb -g -ffunction-sections -Og -ffat-lto-objects -l m -L Generated_Source\PSoC4 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC4\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections" />
 </name>
 </genericCmdLineData>
-<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\gizmo\AppData\Local\Cypress Semiconductor\PSoC Creator\3.3&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p &quot;D:\Users\gizmo\Documents\PSoC\PSoC 4 Pioneer Temp Meas\PSoC 4 Pioneer Temp Meas.cydsn\PSoC 4 Pioneer Temp Meas.cyprj&quot; -d CY8C4245AXI-483 -s &quot;D:\Users\gizmo\Documents\PSoC\PSoC 4 Pioneer Temp Meas\PSoC 4 Pioneer Temp Meas.cydsn\Generated_Source\PSoC4&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
+<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\gizmo\AppData\Local\Cypress Semiconductor\PSoC Creator\3.3&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -p &quot;D:\Users\gizmo\Documents\Develop\PSoC 4 Thermistor\PSoC\PSoC 4 Pioneer Temp Meas\PSoC 4 Pioneer Temp Meas.cydsn\PSoC 4 Pioneer Temp Meas.cyprj&quot; -d CY8C4245AXI-483 -s &quot;D:\Users\gizmo\Documents\Develop\PSoC 4 Thermistor\PSoC\PSoC 4 Pioneer Temp Meas\PSoC 4 Pioneer Temp Meas.cydsn\Generated_Source\PSoC4&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
 </CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
 </dataGuid>
 <dataGuid v="597c5b74-0c46-4204-8b7f-96f3570671dc">
@@ -774,6 +815,7 @@
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Cypress Component Catalog\System\Real-time clock (RTC) [v1.10]">
 <ExpandedNodeIds>
 <v>Cypress Component Catalog</v>
+<v>Cypress Component Catalog\Thermal Management</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Cypress Component Catalog</v>
@@ -786,6 +828,11 @@
 <v>Cypress Component Catalog\Power Supervision</v>
 <v>Cypress Component Catalog\System</v>
 <v>Cypress Component Catalog\Thermal Management</v>
+<v>Cypress Component Catalog\Thermal Management\Fan Controller [v4.0]</v>
+<v>Cypress Component Catalog\Thermal Management\RTD Calculator [v1.20]</v>
+<v>Cypress Component Catalog\Thermal Management\Thermistor Calculator [v1.20]</v>
+<v>Cypress Component Catalog\Thermal Management\Thermocouple Calculator [v1.20]</v>
+<v>Cypress Component Catalog\Thermal Management\TMP05 Interface Macro [v1.10]</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Off-Chip Component Catalog\Active\Voltage Regulator [v1.0]">
@@ -1781,6 +1828,30 @@
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC4\API\pins.h</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC4\API\aliases.h</v>
 <v>${CyRoot}\psoc\content\cyprimitives\CyPrimitives.cylib\cy_pins_v2_20\PSoC4\API\pins_PM.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\ThermistorCalc_v1_20.cysym</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\ThermistorCalc_v1_20.pdf</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\ThermistorCalc_v1_20.cystate</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\API\ThermistorCalc.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\API\ThermistorCalc.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cycustomizer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cyparameters.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cygeneraltab.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cygeneraltab.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\Resources.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cygeneraltab.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\Resources.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\ThermistorCalc_v1_20.cysym</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\ThermistorCalc_v1_20.pdf</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\ThermistorCalc_v1_20.cystate</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\API\ThermistorCalc.c</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\API\ThermistorCalc.h</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cycustomizer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cyparameters.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cygeneraltab.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cygeneraltab.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\Resources.Designer.cs</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\cygeneraltab.resx</v>
+<v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\ThermistorCalc_v1_20\Custom\Resources.resx</v>
 <v>.\PSoC 4 Pioneer Temp Meas.cydwr</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v5_40\PSoC4\API\cm0gcc.ld</v>
 <v>${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\cy_boot_v5_40\PSoC4\API\Cm0RealView.scat</v>
@@ -1927,6 +1998,12 @@
 <v>.\Generated_Source\PSoC4\V_therm2_PM.c</v>
 <v>.\Generated_Source\PSoC4\RTC_1.c</v>
 <v>.\Generated_Source\PSoC4\RTC_1.h</v>
+<v>.\Generated_Source\PSoC4\Thermistor_low.c</v>
+<v>.\Generated_Source\PSoC4\Thermistor_low.h</v>
+<v>.\Generated_Source\PSoC4\Thermistor_mid.c</v>
+<v>.\Generated_Source\PSoC4\Thermistor_mid.h</v>
+<v>.\Generated_Source\PSoC4\Thermistor_high.c</v>
+<v>.\Generated_Source\PSoC4\Thermistor_high.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -1935,14 +2012,14 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="131189797121883763" />
+<deps_time v="131189819812326074" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="131189797140665643" />
+<deps_time v="131189824523949055" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="237c8ed1-e161-4c9d-af97-582eda6d6952">
