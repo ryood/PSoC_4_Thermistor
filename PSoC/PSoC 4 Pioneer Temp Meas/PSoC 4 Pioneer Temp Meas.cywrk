@@ -3,11 +3,12 @@
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
 <CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspc" version="5" xml_contents_version="3" name="PSoC 4 Pioneer Temp Meas" persistent="" platform="NOT_USED">
-<current_project name=".\PSoC 4 Pioneer Temp Meas.cydsn\PSoC 4 Pioneer Temp Meas.cyprj" />
+<current_project name=".\PSoC 4 Prototyping Temp Meas.cydsn\PSoC 4 Prototyping Temp Meas.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
 <v>.\PSoC 4 Pioneer Temp Meas.cydsn\PSoC 4 Pioneer Temp Meas.cyprj</v>
+<v>.\PSoC 4 Prototyping Temp Meas.cydsn\PSoC 4 Prototyping Temp Meas.cyprj</v>
 </projects>
 <workspace_id v="adf4e69c-d3fc-45e3-8b04-2ce7ca113060" />
 <WriteAppVersionLastSavedWith v="3.3.0.9604" />
