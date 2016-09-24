@@ -12,6 +12,9 @@
 #include <project.h>
 #include <stdio.h>
 
+#define TITLE_STR1  ("PSoC 4 Thermo")
+#define TITLE_STR2  ("20160924")
+
 #define VREF            (0x7FF)
 #define CH_VREF         (1u)
 #define CH_THERMISTOR   (0u)
@@ -30,8 +33,15 @@ int main()
     
     UART_1_Start();
     UART_1_UartPutString("\r\n\r\nThemistor Test..\r\n");
+    
+    LCD_Char_1_Start();
+    LCD_Char_1_PrintString(TITLE_STR1);
+    LCD_Char_1_Position(1, 0);
+    LCD_Char_1_PrintString(TITLE_STR2);
         
     ADC_SAR_Seq_1_Start();
+    
+    CyDelay(1000);
     
     count = 0;
     for(;;)
@@ -58,7 +68,7 @@ int main()
             temperautre = Thermistor_mid_GetTemperature(rTherm);
         }
         
-        sprintf(uartLine, "%d.%d,\t%d.%d,\t%lu,\t%d,\t%d,\t%d\r\n",
+        sprintf(uartLine, "%d.%d,\t%d.%02d,\t%lu,\t%d,\t%d,\t%d\r\n",
             count / 10,
             count % 10,
             temperautre / 100,
@@ -69,6 +79,15 @@ int main()
             vTherm+vRef
         );
         UART_1_UartPutString(uartLine);
+        
+        if (count % 10 == 0) {
+            sprintf(uartLine, "%d.%d sec", count / 10, count % 10);
+            LCD_Char_1_ClearDisplay();
+            LCD_Char_1_PrintString(uartLine);
+            sprintf(uartLine, "%d.%02d deg", temperautre / 100, temperautre % 100);
+            LCD_Char_1_Position(1, 0);
+            LCD_Char_1_PrintString(uartLine);
+        }
         
         CyDelay(100);
         count++;
