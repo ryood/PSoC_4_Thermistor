@@ -13,11 +13,19 @@
 #include <stdio.h>
 
 #define TITLE_STR1  ("PSoC 4 Thermo")
-#define TITLE_STR2  ("20160924")
+#define TITLE_STR2  ("20170116")
 
 #define VREF            (0x7FF)
 #define CH_VREF         (1u)
 #define CH_THERMISTOR   (0u)
+
+#define INTERVAL        (1000u) // us
+#define DEGREE_CHR      (0xDF)  // °
+
+int abs(int i)
+{
+    return (i >= 0) ? i : -i;
+}
 
 int main()
 {
@@ -68,11 +76,10 @@ int main()
             temperautre = Thermistor_mid_GetTemperature(rTherm);
         }
         
-        sprintf(uartLine, "%d.%d,\t%d.%02d,\t%lu,\t%d,\t%d,\t%d\r\n",
-            count / 10,
-            count % 10,
+        sprintf(uartLine, "%d,\t%d.%02d,\t%lu,\t%d,\t%d,\t%d\r\n",
+            count,
             temperautre / 100,
-            temperautre % 100,
+            abs(temperautre % 100),
             rTherm,
             vTherm,
             vRef,
@@ -80,16 +87,14 @@ int main()
         );
         UART_1_UartPutString(uartLine);
         
-        if (count % 10 == 0) {
-            sprintf(uartLine, "%d.%d sec", count / 10, count % 10);
-            LCD_Char_1_ClearDisplay();
-            LCD_Char_1_PrintString(uartLine);
-            sprintf(uartLine, "%d.%02d deg", temperautre / 100, temperautre % 100);
-            LCD_Char_1_Position(1, 0);
-            LCD_Char_1_PrintString(uartLine);
-        }
+        sprintf(uartLine, "%d sec", count);
+        LCD_Char_1_ClearDisplay();
+        LCD_Char_1_PrintString(uartLine);
+        sprintf(uartLine, "%d.%02d%cC", temperautre / 100, abs(temperautre % 100), DEGREE_CHR);
+        LCD_Char_1_Position(1, 0);
+        LCD_Char_1_PrintString(uartLine);
         
-        CyDelay(100);
+        CyDelay(INTERVAL);
         count++;
     }
 }
